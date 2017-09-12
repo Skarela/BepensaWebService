@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<conexion>
+<Datos_WP>
+<usr>usr_wsfinbepbas</usr>
+<pwd>fin++2001*</pwd>
+<srv>mdaote</srv>
+</Datos_WP>
+<Ax>
+<Comp>FB08</Comp>
+<Lng></Lng>
+<objsrv>FINBEAXDES1@srvfinbeaxdes1:2712</objsrv>
+<Cfg></Cfg>
+</Ax>
+<Crm>
+<Id>1</Id>
+<Amb>desarrollo</Amb>
+<Org>finanbepen</Org>
+<Url>http://crm2.bepensa.net:5555/MSCrmServices/2007/CrmService.asmx</Url>
+<usr>Ax_bcproxydes01</usr>
+<pwd>Ax_bcproxydes01</pwd>
+<srv>mdaote</srv>
+</Crm>
+</conexion>
+

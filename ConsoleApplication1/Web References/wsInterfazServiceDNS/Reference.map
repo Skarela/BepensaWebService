@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://finbeprepbas.finbe.com.mx:444/wsInterfazWBC/wsInterfaz.asmx?wsdl" filename="wsInterfaz.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://finbeprepbas.finbe.com.mx:444/wsInterfazWBC/wsInterfaz.asmx?disco" filename="wsInterfaz.disco" />
+  </Results>
+</DiscoveryClientResultsFile>

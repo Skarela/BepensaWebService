@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SPFileUpload" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ISPFileUpload_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://srvpbashare.mdaote.bepensa.local:447/SPFileUpload.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://srvpbashare.mdaote.bepensa.local:447/SPFileUpload.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://srvpbashare.mdaote.bepensa.local:447/SPFileUpload.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Infopoint.NET.Tipos" />
+      <xsd:import schemaLocation="https://srvpbashare.mdaote.bepensa.local:447/SPFileUpload.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Infopoint.NET" />
+      <xsd:import schemaLocation="https://srvpbashare.mdaote.bepensa.local:447/SPFileUpload.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Microsoft.SharePoint.Client" />
+      <xsd:import schemaLocation="https://srvpbashare.mdaote.bepensa.local:447/SPFileUpload.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISPFileUpload_TipoDeAutenticación_InputMessage">
+    <wsdl:part name="parameters" element="tns:TipoDeAutenticación" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_TipoDeAutenticación_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TipoDeAutenticaciónResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_AutenticaUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutenticaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_AutenticaUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutenticaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_ObtenColeccionDeItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenColeccionDeItems" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_ObtenColeccionDeItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenColeccionDeItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_ObtenColeccionDeListas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenColeccionDeListas" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_ObtenColeccionDeListas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenColeccionDeListasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_ObtenColeccionDeTiposDeContenido_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenColeccionDeTiposDeContenido" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_ObtenColeccionDeTiposDeContenido_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenColeccionDeTiposDeContenidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_AceptaDocumentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:AceptaDocumentos" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_AceptaDocumentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AceptaDocumentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_ObtenColeccionDeCarpetas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenColeccionDeCarpetas" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_ObtenColeccionDeCarpetas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenColeccionDeCarpetasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_CargaArchivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:CargaArchivo" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_CargaArchivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CargaArchivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_DescargaArchivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DescargaArchivo" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_DescargaArchivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DescargaArchivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_DescargaArchivoPorNombre_InputMessage">
+    <wsdl:part name="parameters" element="tns:DescargaArchivoPorNombre" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_DescargaArchivoPorNombre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DescargaArchivoPorNombreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_ObtenNombreFileStream_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenNombreFileStream" />
+  </wsdl:message>
+  <wsdl:message name="ISPFileUpload_ObtenNombreFileStream_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenNombreFileStreamResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISPFileUpload">
+    <wsdl:operation name="TipoDeAutenticación">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISPFileUpload/TipoDeAutenticación" message="tns:ISPFileUpload_TipoDeAutenticación_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISPFileUpload/TipoDeAutenticaciónResponse" message="tns:ISPFileUpload_TipoDeAutenticación_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AutenticaUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISPFileUpload/AutenticaUsuario" message="tns:ISPFileUpload_AutenticaUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISPFileUpload/AutenticaUsuarioResponse" message="tns:ISPFileUpload_AutenticaUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenColeccionDeItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISPFileUpload/ObtenColeccionDeItems" message="tns:ISPFileUpload_ObtenColeccionDeItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISPFileUpload/ObtenColeccionDeItemsResponse" message="tns:ISPFileUpload_ObtenColeccionDeItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenColeccionDeListas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISPFileUpload/ObtenColeccionDeListas" message="tns:ISPFileUpload_ObtenColeccionDeListas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISPFileUpload/ObtenColeccionDeListasResponse" message="tns:ISPFileUpload_ObtenColeccionDeListas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenColeccionDeTiposDeContenido">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISPFileUpload/ObtenColeccionDeTiposDeContenido" message="tns:ISPFileUpload_ObtenColeccionDeTiposDeContenido_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISPFileUpload/ObtenColeccionDeTiposDeContenidoResponse" message="tns:ISPFileUpload_ObtenColeccionDeTiposDeContenido_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AceptaDocumentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISPFileUpload/AceptaDocumentos" message="tns:ISPFileUpload_AceptaDocumentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISPFileUpload/AceptaDocumentosResponse" message="tns:ISPFileUpload_AceptaDocumentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenColeccionDeCarpetas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISPFileUpload/ObtenColeccionDeCarpetas" message="tns:ISPFileUpload_ObtenColeccionDeCarpetas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISPFileUpload/ObtenColeccionDeCarpetasResponse" message="tns:ISPFileUpload_ObtenColeccionDeCarpetas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CargaArchivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISPFileUpload/CargaArchivo" message="tns:ISPFileUpload_CargaArchivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISPFileUpload/CargaArchivoResponse" message="tns:ISPFileUpload_CargaArchivo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DescargaArchivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISPFileUpload/DescargaArchivo" message="tns:ISPFileUpload_DescargaArchivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISPFileUpload/DescargaArchivoResponse" message="tns:ISPFileUpload_DescargaArchivo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DescargaArchivoPorNombre">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISPFileUpload/DescargaArchivoPorNombre" message="tns:ISPFileUpload_DescargaArchivoPorNombre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISPFileUpload/DescargaArchivoPorNombreResponse" message="tns:ISPFileUpload_DescargaArchivoPorNombre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenNombreFileStream">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISPFileUpload/ObtenNombreFileStream" message="tns:ISPFileUpload_ObtenNombreFileStream_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISPFileUpload/ObtenNombreFileStreamResponse" message="tns:ISPFileUpload_ObtenNombreFileStream_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ISPFileUpload" type="tns:ISPFileUpload">
+    <wsp:PolicyReference URI="#WSHttpBinding_ISPFileUpload_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TipoDeAutenticación">
+      <soap12:operation soapAction="http://tempuri.org/ISPFileUpload/TipoDeAutenticación" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutenticaUsuario">
+      <soap12:operation soapAction="http://tempuri.org/ISPFileUpload/AutenticaUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenColeccionDeItems">
+      <soap12:operation soapAction="http://tempuri.org/ISPFileUpload/ObtenColeccionDeItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenColeccionDeListas">
+      <soap12:operation soapAction="http://tempuri.org/ISPFileUpload/ObtenColeccionDeListas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenColeccionDeTiposDeContenido">
+      <soap12:operation soapAction="http://tempuri.org/ISPFileUpload/ObtenColeccionDeTiposDeContenido" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AceptaDocumentos">
+      <soap12:operation soapAction="http://tempuri.org/ISPFileUpload/AceptaDocumentos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenColeccionDeCarpetas">
+      <soap12:operation soapAction="http://tempuri.org/ISPFileUpload/ObtenColeccionDeCarpetas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargaArchivo">
+      <soap12:operation soapAction="http://tempuri.org/ISPFileUpload/CargaArchivo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescargaArchivo">
+      <soap12:operation soapAction="http://tempuri.org/ISPFileUpload/DescargaArchivo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescargaArchivoPorNombre">
+      <soap12:operation soapAction="http://tempuri.org/ISPFileUpload/DescargaArchivoPorNombre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenNombreFileStream">
+      <soap12:operation soapAction="http://tempuri.org/ISPFileUpload/ObtenNombreFileStream" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SPFileUpload">
+    <wsdl:port name="WSHttpBinding_ISPFileUpload" binding="tns:WSHttpBinding_ISPFileUpload">
+      <soap12:address location="https://srvpbashare.mdaote.bepensa.local:447/SPFileUpload.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://srvpbashare.mdaote.bepensa.local:447/SPFileUpload.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

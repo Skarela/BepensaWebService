@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://srvpbashare.mdaote.bepensa.local:447/SPFileUpload.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Infopoint.NET.Tipos" />
+  <xs:import schemaLocation="https://srvpbashare.mdaote.bepensa.local:447/SPFileUpload.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Infopoint.NET" />
+  <xs:import schemaLocation="https://srvpbashare.mdaote.bepensa.local:447/SPFileUpload.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Microsoft.SharePoint.Client" />
+  <xs:import schemaLocation="https://srvpbashare.mdaote.bepensa.local:447/SPFileUpload.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/Message" />
+  <xs:element name="TipoDeAutenticación">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="webURLSitio" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TipoDeAutenticaciónResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Infopoint.NET.Tipos" minOccurs="0" name="TipoDeAutenticaciónResult" type="q1:SPClientAuthenticationMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutenticaUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Infopoint.NET" minOccurs="0" name="credencial" nillable="true" type="q2:Credenciales" />
+        <xs:element minOccurs="0" name="webURLSitio" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutenticaUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AutenticaUsuarioResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenColeccionDeItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Infopoint.NET" minOccurs="0" name="credencial" nillable="true" type="q3:Credenciales" />
+        <xs:element minOccurs="0" name="webURLSitio" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombreLista" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="esTituloLista" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenColeccionDeItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Infopoint.NET.Tipos" minOccurs="0" name="ObtenColeccionDeItemsResult" nillable="true" type="q4:ArrayOfSPItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenColeccionDeListas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Infopoint.NET" minOccurs="0" name="credencial" nillable="true" type="q5:Credenciales" />
+        <xs:element minOccurs="0" name="webURLSitio" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Infopoint.NET.Tipos" minOccurs="0" name="queCampos" type="q6:SPFormaDatos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenColeccionDeListasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Infopoint.NET.Tipos" minOccurs="0" name="ObtenColeccionDeListasResult" nillable="true" type="q7:ArrayOfSPList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenColeccionDeTiposDeContenido">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Infopoint.NET" minOccurs="0" name="credencial" nillable="true" type="q8:Credenciales" />
+        <xs:element minOccurs="0" name="webURLSitio" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tituloLista" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenColeccionDeTiposDeContenidoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Infopoint.NET.Tipos" minOccurs="0" name="ObtenColeccionDeTiposDeContenidoResult" nillable="true" type="q9:ArrayOfSPContentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AceptaDocumentos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Infopoint.NET" minOccurs="0" name="credencial" nillable="true" type="q10:Credenciales" />
+        <xs:element minOccurs="0" name="webURLSitio" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tituloLista" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AceptaDocumentosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AceptaDocumentosResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenColeccionDeCarpetas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Infopoint.NET" minOccurs="0" name="credencial" nillable="true" type="q11:Credenciales" />
+        <xs:element minOccurs="0" name="webURLSitio" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombreLista" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="esTituloLista" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenColeccionDeCarpetasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Infopoint.NET.Tipos" minOccurs="0" name="ObtenColeccionDeCarpetasResult" nillable="true" type="q12:ArrayOfSPFolder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CargaArchivo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Infopoint.NET" minOccurs="0" name="credencial" nillable="true" type="q13:Credenciales" />
+        <xs:element minOccurs="0" name="webURLSitio" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tituloLista" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="estitulolista" type="xs:boolean" />
+        <xs:element minOccurs="0" name="carpeta" nillable="true" type="xs:string" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Microsoft.SharePoint.Client" minOccurs="0" name="archivo" nillable="true" type="q14:FileCreationInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CargaArchivoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CargaArchivoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DescargaArchivo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Infopoint.NET" minOccurs="0" name="credencial" nillable="true" type="q15:Credenciales" />
+        <xs:element minOccurs="0" name="webURLSitio" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombreLista" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="esTituloLista" type="xs:boolean" />
+        <xs:element minOccurs="0" name="carpeta" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DescargaArchivoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.microsoft.com/Message" name="DescargaArchivoResult" type="q16:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DescargaArchivoPorNombre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Infopoint.NET" minOccurs="0" name="credencial" nillable="true" type="q17:Credenciales" />
+        <xs:element minOccurs="0" name="webURLSitio" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombreLista" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="esTituloLista" type="xs:boolean" />
+        <xs:element minOccurs="0" name="carpeta" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombreArchivo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DescargaArchivoPorNombreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.microsoft.com/Message" name="DescargaArchivoPorNombreResult" type="q18:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenNombreFileStream">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Infopoint.NET" minOccurs="0" name="credencial" nillable="true" type="q19:Credenciales" />
+        <xs:element minOccurs="0" name="webURLSitio" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombreLista" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="esTituloLista" type="xs:boolean" />
+        <xs:element minOccurs="0" name="carpeta" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenNombreFileStreamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenNombreFileStreamResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

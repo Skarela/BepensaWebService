@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Infopoint.NET.Tipos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Infopoint.NET.Tipos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://srvpbashare.mdaote.bepensa.local:447/SPFileUpload.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="SPClientAuthenticationMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="FormsAuthentication" />
+      <xs:enumeration value="Anonymous" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SPClientAuthenticationMode" nillable="true" type="tns:SPClientAuthenticationMode" />
+  <xs:complexType name="ArrayOfSPItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SPItem" nillable="true" type="tns:SPItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSPItem" nillable="true" type="tns:ArrayOfSPItem" />
+  <xs:complexType name="SPItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SPItem" nillable="true" type="tns:SPItem" />
+  <xs:simpleType name="SPFormaDatos">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DescripcionIDTitulo" />
+      <xs:enumeration value="TodosLosCampos" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SPFormaDatos" nillable="true" type="tns:SPFormaDatos" />
+  <xs:complexType name="ArrayOfSPList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SPList" nillable="true" type="tns:SPList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSPList" nillable="true" type="tns:ArrayOfSPList" />
+  <xs:complexType name="SPList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowContentTypes" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BaseTemplate" type="xs:int" />
+      <xs:element minOccurs="0" name="BaseType" type="tns:SPBaseType" />
+      <xs:element minOccurs="0" name="BrowserFileHandling" type="tns:SPBrowserFileHandling" />
+      <xs:element minOccurs="0" name="ContentTypesEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DefaultContentApprovalWorkflowId" type="ser:guid" />
+      <xs:element minOccurs="0" name="DefaultDisplayFormUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultEditFormUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultNewFormUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultViewUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentTemplateUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DraftVersionVisibility" type="tns:SPDraftVisibilityType" />
+      <xs:element minOccurs="0" name="EnableAttachments" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableFolderCreation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableMinorVersions" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableModeration" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableVersioning" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ForceCheckout" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasExternalDataSource" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Hidden" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsApplicationList" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsCatalog" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSiteAssetsLibrary" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ItemCount" type="xs:int" />
+      <xs:element minOccurs="0" name="LastItemDeletedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastItemModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MultipleDataList" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NoCrawl" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OnQuickLaunch" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ParentWebUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SchemaXml" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServerTemplateCanCreateFolders" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TemplateFeatureId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidationFormula" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidationMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SPList" nillable="true" type="tns:SPList" />
+  <xs:simpleType name="SPBaseType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GenericList">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DocumentLibrary">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unused">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DiscussionBoard">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Survey">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Issue">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SPBaseType" nillable="true" type="tns:SPBaseType" />
+  <xs:simpleType name="SPBrowserFileHandling">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Permissive" />
+      <xs:enumeration value="Strict" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SPBrowserFileHandling" nillable="true" type="tns:SPBrowserFileHandling" />
+  <xs:simpleType name="SPDraftVisibilityType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Reader" />
+      <xs:enumeration value="Author" />
+      <xs:enumeration value="Approver" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SPDraftVisibilityType" nillable="true" type="tns:SPDraftVisibilityType" />
+  <xs:complexType name="ArrayOfSPContentType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SPContentType" nillable="true" type="tns:SPContentType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSPContentType" nillable="true" type="tns:ArrayOfSPContentType" />
+  <xs:complexType name="SPContentType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayFormTemplateName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayFormUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentTemplate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentTemplateUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EditFormTemplateName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EditFormUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Group" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Hidden" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NewFormTemplateName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NewFormUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SchemaXml" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Scope" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SPContentType" nillable="true" type="tns:SPContentType" />
+  <xs:complexType name="ArrayOfSPFolder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SPFolder" nillable="true" type="tns:SPFolder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSPFolder" nillable="true" type="tns:ArrayOfSPFolder" />
+  <xs:complexType name="SPFolder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ItemCount" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentFolder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServerRelativeUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WelcomePage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SPFolder" nillable="true" type="tns:SPFolder" />
+</xs:schema>
