@@ -159,7 +159,6 @@ namespace wsInterfaz2013
 
                 metaEx = new MetadatosExp
                 {
-
                     Folio = jsonParams["Folio Expediente"],
                     FechaSolicitud = Convert.ToDateTime(jsonParams["Fecha Solicitud"]),
                     CorreoEjecutivo = jsonParams["ID del Ejecutivo"],
